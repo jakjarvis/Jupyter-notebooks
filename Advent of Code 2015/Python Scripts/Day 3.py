@@ -34,26 +34,22 @@ for char in Dir:
     x = char
     if x == "^":
         Coord[0] = Coord[0]+1
-        print(Coord)
+        # print(Coord)
         Visits.append(Coord.copy())
     elif x == "v":
         Coord[0] = Coord[0]-1
-        print(Coord)
+        # print(Coord)
         Visits.append(Coord.copy())
     elif x == "<":
         Coord[1] = Coord[1]-1
-        print(Coord)
+        # print(Coord)
         Visits.append(Coord.copy())
     elif x == ">":
         Coord[1] = Coord[1]+1
-        print(Coord)
+        # print(Coord)
         Visits.append(Coord.copy())
 
 # # Count the number of unique houses
-
-Houses = tuple(Visits)
-
-len(set(Houses))
 
 Unique_Houses = []
 for item in Visits: 
