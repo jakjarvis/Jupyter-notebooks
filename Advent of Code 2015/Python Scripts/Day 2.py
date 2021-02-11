@@ -14,24 +14,26 @@
 
  
 
-# # Importing the real list
+# Importing the list
 
 import pandas as pd
 
-df = pd.read_csv(r"C:\Users\Jono\Downloads\Input.csv")
+df = pd.read_csv(r"C:\Users\Jono\Downloads\Input.csv") # my input is saved in a .csv file at this location - you need to save yours as one and change the path to the right location
 
 df.info()
 
-
-# # Start of my solution
+# define empty lists for subsequent code
 
 list2 = []
-
 real_list = []
+
+# Read the rows out of the input dataframe df and into a list (real_list)
 
 for row in df["Presents!"]:
     a, b, c = row.split('x')
     real_list.append([int(a),int(b),int(c)])
+
+# Cycle through the values in real_list and calculate the areas of all the sides (plus the extra), and add them to a new list, list2
 
 for a in real_list:
     x = 2 * a[0] * a[1]
@@ -44,6 +46,8 @@ for a in real_list:
     b.append(xtra[0]/2)
     list2.append(b)
 
+# for each present in the list, sum all the areas of paper in list2 and creat a third and final list, shopping_list, contining the total paper per present
+    
 shopping_list = []
 
 for present in list2:
@@ -51,6 +55,7 @@ for present in list2:
 
 print(shopping_list)
 
+# add up all the presents for a total
 order = sum(shopping_list)
 
 print(order)
@@ -70,6 +75,8 @@ print(order)
 # How many total feet of ribbon should they order?
 
 list3 = []
+
+# similar logic to Part 1 but this time instead of using two seperate lists (list2 and shopping_list) I did it all in one step to complete a list of total ribbon per present
 
 for a in real_list:
     a.sort()
