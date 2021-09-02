@@ -1,0 +1,5 @@
+Corona related data: Our World in Data
+https://github.com/owid/covid-19-data/tree/master/public/data
+
+Index related data: Yahoo Finance
+
